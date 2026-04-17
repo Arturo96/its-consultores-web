@@ -1,0 +1,21 @@
+---
+export interface Props {
+	whatsappHref?: string;
+	email?: string;
+	phone?: string;
+}
+
+const {
+	whatsappHref = "https://wa.me/",
+	email = "comercial@example.com",
+	phone = "+57 300 000 0000",
+} = Astro.props;
+---
+
+<section aria-labelledby="contacto-titulo">
+	<h2 id="contacto-titulo">Contacto</h2>
+	<p>Escribanos directamente por WhatsApp para recibir atencion comercial.</p>
+	<a href={whatsappHref}>Hablar por WhatsApp</a>
+	<p>Correo: {email}</p>
+	<p>Telefono: {phone}</p>
+</section>

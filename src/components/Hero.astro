@@ -1,0 +1,21 @@
+---
+export interface Props {
+	title?: string;
+	description?: string;
+	ctaLabel?: string;
+	ctaHref?: string;
+}
+
+const {
+	title = "Protegemos la operacion digital de su empresa",
+	description = "Servicios de ciberseguridad orientados a empresas que buscan reducir riesgos y fortalecer su infraestructura tecnologica.",
+	ctaLabel = "Contactar por WhatsApp",
+	ctaHref = "https://wa.me/",
+} = Astro.props;
+---
+
+<section>
+	<h1>{title}</h1>
+	<p>{description}</p>
+	<a href={ctaHref}>{ctaLabel}</a>
+</section>
