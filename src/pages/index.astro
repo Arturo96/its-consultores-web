@@ -3,5 +3,33 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Inicio | IT & Security Consultores">
-	<h1>Inicio</h1>
+	<main class="min-h-screen bg-slate-950 px-6 py-16 text-white">
+		<section class="mx-auto flex max-w-5xl flex-col gap-8 rounded-3xl border border-cyan-500/20 bg-white/5 p-10 shadow-2xl shadow-cyan-950/30 backdrop-blur">
+			<span class="w-fit rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-sm font-medium text-cyan-200">
+				Ciberseguridad B2B en Colombia
+			</span>
+			<div class="max-w-3xl space-y-4">
+				<h1 class="text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+					Protegemos la infraestructura digital de su empresa con un enfoque claro y corporativo.
+				</h1>
+				<p class="text-lg leading-8 text-slate-300">
+					Acompañamos a empresas que necesitan fortalecer su postura de seguridad, evaluar vulnerabilidades y reducir riesgos operativos.
+				</p>
+			</div>
+			<div class="flex flex-col gap-4 sm:flex-row">
+				<a
+					href="https://wa.me/"
+					class="inline-flex items-center justify-center rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+				>
+					Contactar por WhatsApp
+				</a>
+				<a
+					href="/servicios"
+					class="inline-flex items-center justify-center rounded-xl border border-white/15 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+				>
+					Ver servicios
+				</a>
+			</div>
+		</section>
+	</main>
 </MainLayout>
