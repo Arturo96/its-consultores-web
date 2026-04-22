@@ -1,35 +1,234 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
+const whatsappHref = "https://wa.me/";
+
+const services = [
+	{
+		title: "Consultoria",
+		description:
+			"Brindamos asesoria experta para construir estrategias de ciberseguridad alineadas con el contexto operativo de su empresa.",
+		icon: "01",
+	},
+	{
+		title: "Auditorias",
+		description:
+			"Realizamos evaluaciones tecnicas para identificar vulnerabilidades, reducir riesgos y mejorar la resiliencia de su infraestructura.",
+		icon: "02",
+	},
+	{
+		title: "Capacitacion",
+		description:
+			"Fortalecemos la cultura de seguridad de su equipo con formacion practica para prevenir incidentes y elevar la madurez operativa.",
+		icon: "03",
+	},
+];
+
+const allies = ["FORTINET", "FARONICS", "ACRONIS", "KASPERSKY", "GFI", "BITDEFENDER"];
+
+const reasons = [
+	{
+		title: "Experiencia comprobada",
+		description:
+			"Contamos con profesionales especializados en seguridad informatica que disenan planes de proteccion personalizados para cada organizacion.",
+		label: "01",
+		accent: "from-cyan-400/20 via-slate-950 to-slate-950",
+	},
+	{
+		title: "Acompanamiento real",
+		description:
+			"No nos limitamos a recomendar herramientas. Acompanamos la implementacion, configuracion y adopcion para maximizar el retorno de su inversion.",
+		label: "02",
+		accent: "from-amber-200/20 via-slate-950 to-slate-950",
+	},
+	{
+		title: "Enfoque proactivo",
+		description:
+			"Ayudamos a prevenir incidentes mediante evaluacion continua, priorizacion de riesgos y estrategias orientadas a la continuidad del negocio.",
+		label: "03",
+		accent: "from-cyan-300/18 via-slate-950 to-slate-950",
+	},
+];
 ---
 
-<MainLayout title="Inicio | IT & Security Consultores">
-	<main class="min-h-screen bg-slate-950 px-6 py-16 text-white">
-		<section class="mx-auto flex max-w-5xl flex-col gap-8 rounded-3xl border border-cyan-500/20 bg-white/5 p-10 shadow-2xl shadow-cyan-950/30 backdrop-blur">
-			<span class="w-fit rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-sm font-medium text-cyan-200">
-				Ciberseguridad B2B en Colombia
-			</span>
-			<div class="max-w-3xl space-y-4">
-				<h1 class="text-4xl font-bold tracking-tight text-balance sm:text-5xl">
-					Protegemos la infraestructura digital de su empresa con un enfoque claro y corporativo.
+<MainLayout
+	title="Inicio | IT & Security Consultores"
+	description="Landing page corporativa de IT & Security Consultores con enfoque B2B, servicios de ciberseguridad y CTA directo a WhatsApp."
+>
+	<section class="section-shell overflow-hidden px-5 py-16 md:px-8 md:py-20 lg:px-10">
+		<div class="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+			<div class="relative">
+				<div class="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[var(--color-chip)] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/85">
+					<span class="h-2 w-2 rounded-full bg-[var(--color-primary)]"></span>
+					Seguridad informatica
+				</div>
+
+				<h1 class="max-w-2xl text-5xl font-extrabold leading-none text-white sm:text-6xl lg:text-7xl">
+					Be
+					<span class="text-glow mt-2 block text-[var(--color-primary)]">Proactive.</span>
 				</h1>
-				<p class="text-lg leading-8 text-slate-300">
-					Acompañamos a empresas que necesitan fortalecer su postura de seguridad, evaluar vulnerabilidades y reducir riesgos operativos.
+
+				<p class="mt-7 max-w-xl text-lg leading-8 text-[var(--color-muted)]">
+					Soluciones integrales de seguridad informatica para proteger la informacion de su
+					empresa, reducir superficie de riesgo y convertir a su organizacion en un verdadero
+					firewall humano.
+				</p>
+
+				<div class="mt-10 flex flex-col gap-4 sm:flex-row">
+					<a
+						href={whatsappHref}
+						target="_blank"
+						rel="noreferrer"
+						class="btn-primary px-7 py-4 text-base"
+					>
+						Hablar por WhatsApp
+					</a>
+					<a href="#servicios" class="btn-secondary px-7 py-4 text-base font-semibold text-white">
+						Conocer mas
+					</a>
+				</div>
+
+				<div class="mt-12 grid max-w-2xl gap-4 sm:grid-cols-3">
+					<div class="glass-card rounded-2xl px-5 py-4">
+						<p class="text-3xl font-extrabold text-[var(--color-primary)]">B2B</p>
+						<p class="mt-2 text-sm text-white/65">Enfoque corporativo para empresas en Colombia.</p>
+					</div>
+					<div class="glass-card rounded-2xl px-5 py-4">
+						<p class="text-3xl font-extrabold text-[var(--color-primary)]">24/7</p>
+						<p class="mt-2 text-sm text-white/65">Vision de continuidad y reduccion del riesgo.</p>
+					</div>
+					<div class="glass-card rounded-2xl px-5 py-4">
+						<p class="text-3xl font-extrabold text-[var(--color-primary)]">360°</p>
+						<p class="mt-2 text-sm text-white/65">Consultoria, auditoria y fortalecimiento humano.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="relative hidden lg:block">
+				<div class="absolute inset-0 -z-10 translate-x-8 rounded-full bg-[var(--color-primary)]/6 blur-3xl"></div>
+				<div class="glass-card cyber-frame relative mx-auto aspect-square max-w-[30rem] rotate-3 p-8">
+					<div class="grid-fade absolute inset-0 opacity-60"></div>
+					<div class="absolute inset-8 rounded-[1.6rem] border border-cyan-300/10"></div>
+					<div class="absolute inset-[4.4rem] rounded-[1.3rem] border border-cyan-300/10"></div>
+					<div class="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/30"></div>
+					<div class="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--color-primary)]/55"></div>
+					<div class="absolute left-1/2 top-[24%] h-3 w-3 -translate-x-1/2 rounded-full bg-[var(--color-tertiary)] shadow-[0_0_16px_rgba(255,183,125,0.6)]"></div>
+					<div class="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-cyan-400/10 text-3xl font-extrabold text-[var(--color-primary)]">
+						⛨
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="servicios" class="section-shell px-5 py-20 md:px-8 lg:px-10">
+		<div class="mx-auto max-w-7xl">
+			<div class="mx-auto max-w-2xl text-center">
+				<h2 class="text-4xl font-extrabold text-white md:text-5xl">Nuestros Servicios</h2>
+				<p class="mt-5 text-base leading-7 text-[var(--color-muted)]">
+					Capacidades pensadas para empresas que necesitan una postura de seguridad robusta,
+					practica y alineada con sus prioridades de negocio.
 				</p>
 			</div>
-			<div class="flex flex-col gap-4 sm:flex-row">
+
+			<div class="mt-14 grid gap-6 md:grid-cols-3">
+				{
+					services.map((service) => (
+						<article class="glass-card group rounded-[1.4rem] p-7">
+							<div class="flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(0,18,51,0.48)] text-sm font-extrabold text-[var(--color-primary)] ring-1 ring-white/10">
+								{service.icon}
+							</div>
+							<h3 class="mt-7 text-2xl font-bold text-[var(--color-primary)]">{service.title}</h3>
+							<p class="mt-4 text-sm leading-7 text-white/68">{service.description}</p>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section-shell bg-white/4 px-5 py-18 md:px-8 lg:px-10">
+		<div class="mx-auto max-w-7xl text-center">
+			<h2 class="text-4xl font-extrabold text-white">Nuestros Aliados</h2>
+			<div class="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-sm font-extrabold tracking-[0.12em] text-white/58 md:text-base">
+				{
+					allies.map((ally) => (
+						<span class="transition hover:text-[var(--color-primary)]">{ally}</span>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section-shell px-5 py-20 md:px-8 lg:px-10">
+		<div class="mx-auto max-w-7xl">
+			<div class="text-center">
+				<h2 class="text-4xl font-extrabold text-white md:text-5xl">¿Por qué elegirnos?</h2>
+				<div class="mx-auto mt-5 h-1 w-24 rounded-full bg-gradient-to-r from-[var(--color-primary)] to-transparent"></div>
+			</div>
+
+			<div class="mt-16 space-y-14">
+				{
+					reasons.map((reason, index) => (
+						<div class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+							<div class:list={["order-1", index % 2 === 1 && "md:order-2"]}>
+								<div
+									class:list={[
+										"glass-card relative aspect-[16/10] overflow-hidden rounded-[1.6rem] bg-gradient-to-br p-3",
+										reason.accent,
+									]}
+								>
+									<div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(76,214,251,0.08),transparent_35%)]"></div>
+									<div class="absolute inset-5 rounded-[1.2rem] border border-white/10"></div>
+									<div class="absolute inset-0 flex items-center justify-center">
+										<div class="flex h-36 w-36 items-center justify-center rounded-full border border-cyan-300/25 bg-slate-950/45 text-5xl font-extrabold text-[var(--color-primary)] shadow-[0_0_40px_rgba(0,18,51,0.12)]">
+											{reason.label}
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class:list={["order-2", index % 2 === 1 && "md:order-1"]}>
+								<div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-cyan-300/20 bg-cyan-400/10 text-sm font-extrabold text-[var(--color-primary)]">
+									{reason.label}
+								</div>
+								<h3 class="text-3xl font-bold text-white">{reason.title}</h3>
+								<p class="mt-5 max-w-xl text-base leading-8 text-[var(--color-muted)]">
+									{reason.description}
+								</p>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="px-5 pb-20 md:px-8 lg:px-10">
+		<div class="glass-card mx-auto max-w-6xl rounded-[2rem] px-7 py-10 md:px-12 md:py-12">
+			<div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+				<div>
+					<p class="text-sm font-extrabold uppercase tracking-[0.28em] text-[var(--color-primary)]">
+						Conversemos
+					</p>
+					<h2 class="mt-3 text-3xl font-extrabold text-white md:text-4xl">
+						Active la estrategia de ciberseguridad que su empresa necesita.
+					</h2>
+					<p class="mt-4 max-w-2xl text-base leading-7 text-[var(--color-muted)]">
+						Si busca consultoria, auditorias o acompanamiento para fortalecer su postura de
+						seguridad, podemos ayudarle a definir el siguiente paso.
+					</p>
+				</div>
+
 				<a
-					href="https://wa.me/"
-					class="inline-flex items-center justify-center rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+					href={whatsappHref}
+					target="_blank"
+					rel="noreferrer"
+					class="btn-primary px-7 py-4 text-base"
 				>
-					Contactar por WhatsApp
-				</a>
-				<a
-					href="/servicios"
-					class="inline-flex items-center justify-center rounded-xl border border-white/15 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
-				>
-					Ver servicios
+					Escribir por WhatsApp
 				</a>
 			</div>
-		</section>
-	</main>
+		</div>
+	</section>
 </MainLayout>

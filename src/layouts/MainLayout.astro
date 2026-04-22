@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 import "../styles/global.css";
 
 export interface Props {
@@ -10,6 +12,8 @@ const {
 	title = "IT & Security Consultores",
 	description = "Portal corporativo de IT & Security Consultores enfocado en servicios B2B de ciberseguridad en Colombia.",
 } = Astro.props;
+
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -23,7 +27,16 @@ const {
 		<link rel="icon" href="/favicon.ico" />
 		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen">
+		<div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+			<div class="absolute -left-24 top-0 h-72 w-72 rounded-full bg-[var(--color-primary)]/10 blur-3xl"></div>
+			<div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-500/8 blur-3xl"></div>
+		</div>
+
+		<Header currentPath={currentPath} />
+		<main class="pt-20 md:pt-24">
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>

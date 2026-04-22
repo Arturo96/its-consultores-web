@@ -1,15 +1,52 @@
 ---
+const links = [
+	{ href: "/nosotros", label: "Quienes Somos" },
+	{ href: "/partners", label: "Soluciones" },
+	{ href: "/servicios", label: "Servicios" },
+	{ href: "/contacto", label: "Contacto" },
+];
+
+const { currentPath = "/" } = Astro.props;
 ---
 
-<header>
-	<nav aria-label="Navegacion principal">
-		<a href="/">IT & Security Consultores</a>
-		<ul>
-			<li><a href="/nosotros">Nosotros</a></li>
-			<li><a href="/servicios">Servicios</a></li>
-			<li><a href="/casos-exito">Casos de exito</a></li>
-			<li><a href="/partners">Partners</a></li>
-			<li><a href="/contacto">Contacto</a></li>
-		</ul>
-	</nav>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[rgba(0,18,51,0.7)] backdrop-blur-xl">
+	<div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8 lg:px-10">
+		<a href="/" class="flex items-center gap-3" aria-label="Ir al inicio de IT & Security Consultores">
+			<img
+				src="/images/logo-its.svg"
+				alt="Logo de IT & Security Consultores"
+				class="h-10 w-auto object-contain md:h-11"
+			/>
+		</a>
+
+		<nav aria-label="Navegacion principal" class="hidden items-center gap-2 md:flex">
+			{
+				links.map(({ href, label }) => {
+					const isActive = currentPath === href;
+
+					return (
+						<a
+							href={href}
+							class:list={[
+								"rounded-full px-4 py-2 text-sm font-semibold text-white/72",
+								"hover:bg-white/8 hover:text-[var(--color-primary)]",
+								isActive && "bg-white/8 text-[var(--color-primary)]",
+							]}
+						>
+							{label}
+						</a>
+					);
+				})
+			}
+		</nav>
+
+		<a
+			href="https://wa.me/"
+			target="_blank"
+			rel="noreferrer"
+			class="btn-secondary px-4 py-2 text-sm font-semibold text-white md:px-5"
+		>
+			WhatsApp
+		</a>
+	</div>
 </header>

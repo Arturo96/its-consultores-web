@@ -1,7 +1,65 @@
 ---
+const links = [
+	{ href: "/nosotros", label: "Quienes Somos" },
+	{ href: "/partners", label: "Soluciones" },
+	{ href: "/servicios", label: "Servicios" },
+	{ href: "/contacto", label: "Contacto" },
+	{ href: "#privacidad", label: "Politica de Privacidad" },
+	{ href: "#terminos", label: "Terminos de Servicio" },
+];
 ---
 
-<footer>
-	<p>IT & Security Consultores</p>
-	<p>Soluciones de ciberseguridad para empresas en Colombia.</p>
+<footer class="border-t border-white/10 bg-[rgba(0,12,36,0.86)]">
+	<div class="mx-auto grid max-w-7xl gap-12 px-5 py-14 md:grid-cols-3 md:px-8 lg:px-10">
+		<div class="max-w-sm">
+			<a href="/" class="inline-flex items-center">
+				<img
+					src="/images/logo-its.svg"
+					alt="Logo de IT & Security Consultores"
+					class="h-10 w-auto object-contain"
+				/>
+			</a>
+			<p class="mt-5 text-sm leading-6 text-white/62">
+				Soluciones integrales de seguridad informatica para proteger la informacion de su
+				empresa y fortalecer su operacion con un enfoque B2B.
+			</p>
+		</div>
+
+		<div>
+			<h2 class="text-xs font-extrabold uppercase tracking-[0.28em] text-white/90">Explorar</h2>
+			<ul class="mt-5 space-y-3 text-sm text-white/62">
+				{
+					links.map(({ href, label }) => (
+						<li>
+							<a href={href} class="hover:text-[var(--color-primary)]">
+								{label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+
+		<div>
+			<h2 class="text-xs font-extrabold uppercase tracking-[0.28em] text-white/90">Contacto</h2>
+			<ul class="mt-5 space-y-4 text-sm text-white/62">
+				<li>Carrera 80 # 30 - 10<br />Medellin, Colombia</li>
+				<li>Tel: (604) 604 82 70</li>
+				<li>
+					<a
+						href="https://wa.me/"
+						target="_blank"
+						rel="noreferrer"
+						class="font-semibold text-[var(--color-primary)]"
+					>
+						Escribir por WhatsApp
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="border-t border-white/6 px-5 py-5 text-center text-xs text-white/35 md:px-8 lg:px-10">
+		<p>© 2026 IT & Security Consultores Ltda. Todos los derechos reservados.</p>
+	</div>
 </footer>

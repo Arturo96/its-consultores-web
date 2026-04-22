@@ -1,1 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
 @import "tailwindcss";
+
+:root {
+	--color-primary: #4cd6fb;
+	--color-primary-strong: #00b4d8;
+	--color-surface: #001233;
+	--color-surface-low: #071a3b;
+	--color-surface-high: #0f2346;
+	--color-card: rgba(36, 52, 86, 0.52);
+	--color-card-border: rgba(188, 201, 206, 0.14);
+	--color-text: #d8e2ff;
+	--color-muted: #a7b8d8;
+	--color-chip: rgba(40, 76, 83, 0.82);
+	--color-tertiary: #ffb77d;
+	--shadow-ambient: 0 0 48px rgba(0, 18, 51, 0.08);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Manrope", sans-serif;
+	background:
+		radial-gradient(circle at top left, rgba(76, 214, 251, 0.12), transparent 28%),
+		radial-gradient(circle at bottom right, rgba(0, 180, 216, 0.12), transparent 30%),
+		linear-gradient(to right, rgba(76, 214, 251, 0.035) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(76, 214, 251, 0.035) 1px, transparent 1px),
+		var(--color-surface);
+	background-size:
+		auto,
+		auto,
+		4rem 4rem,
+		4rem 4rem,
+		auto;
+	color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Plus Jakarta Sans", sans-serif;
+	letter-spacing: -0.02em;
+}
+
+a,
+button {
+	transition:
+		color 0.25s ease,
+		background-color 0.25s ease,
+		border-color 0.25s ease,
+		box-shadow 0.25s ease,
+		transform 0.25s ease;
+}
+
+.glass-card {
+	background: var(--color-card);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid var(--color-card-border);
+	box-shadow: var(--shadow-ambient);
+}
+
+.section-shell {
+	position: relative;
+	isolation: isolate;
+}
+
+.section-shell::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(76, 214, 251, 0.03), transparent 28%);
+	pointer-events: none;
+	z-index: -1;
+}
+
+.btn-primary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 999px;
+	background: linear-gradient(135deg, var(--color-primary), var(--color-primary-strong));
+	color: #002330;
+	font-weight: 800;
+}
+
+.btn-primary:hover {
+	box-shadow: 0 0 18px rgba(76, 214, 251, 0.32);
+	transform: translateY(-1px);
+}
+
+.btn-secondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 999px;
+	border: 1px solid rgba(188, 201, 206, 0.24);
+	background: rgba(255, 255, 255, 0.02);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+}
+
+.btn-secondary:hover {
+	background: rgba(255, 255, 255, 0.07);
+	border-color: rgba(76, 214, 251, 0.32);
+}
+
+.text-glow {
+	text-shadow: 0 0 28px rgba(76, 214, 251, 0.26);
+}
+
+.cyber-frame {
+	position: relative;
+	overflow: hidden;
+	border-radius: 1.5rem;
+}
+
+.cyber-frame::before,
+.cyber-frame::after {
+	content: "";
+	position: absolute;
+	inset: 1.25rem;
+	border: 1px solid rgba(76, 214, 251, 0.12);
+	border-radius: 1.2rem;
+}
+
+.cyber-frame::after {
+	inset: 2.6rem;
+	border-color: rgba(76, 214, 251, 0.08);
+}
+
+.grid-fade {
+	background-image:
+		linear-gradient(to right, rgba(76, 214, 251, 0.08) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(76, 214, 251, 0.08) 1px, transparent 1px);
+	background-size: 2.75rem 2.75rem;
+	mask-image: radial-gradient(circle at center, black 25%, transparent 78%);
+}
