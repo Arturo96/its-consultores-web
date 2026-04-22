@@ -32,6 +32,8 @@ const reasons = [
 		description:
 			"Contamos con profesionales especializados en seguridad informatica que disenan planes de proteccion personalizados para cada organizacion.",
 		label: "01",
+		image: "/images/experiencia.png",
+		imageAlt: "Equipo profesional de ciberseguridad trabajando en analisis y monitoreo",
 		accent: "from-cyan-400/20 via-slate-950 to-slate-950",
 	},
 	{
@@ -39,6 +41,8 @@ const reasons = [
 		description:
 			"No nos limitamos a recomendar herramientas. Acompanamos la implementacion, configuracion y adopcion para maximizar el retorno de su inversion.",
 		label: "02",
+		image: "/images/acompa%C3%B1amiento.png",
+		imageAlt: "Acompanamiento tecnico en implementacion y soporte de seguridad",
 		accent: "from-amber-200/20 via-slate-950 to-slate-950",
 	},
 	{
@@ -46,6 +50,8 @@ const reasons = [
 		description:
 			"Ayudamos a prevenir incidentes mediante evaluacion continua, priorizacion de riesgos y estrategias orientadas a la continuidad del negocio.",
 		label: "03",
+		image: "/images/be-proactive.png",
+		imageAlt: "Visual de enfoque proactivo y proteccion cibernetica",
 		accent: "from-cyan-300/18 via-slate-950 to-slate-950",
 	},
 ];
@@ -180,11 +186,12 @@ const reasons = [
 								>
 									<div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(76,214,251,0.08),transparent_35%)]"></div>
 									<div class="absolute inset-5 rounded-[1.2rem] border border-white/10"></div>
-									<div class="absolute inset-0 flex items-center justify-center">
-										<div class="flex h-36 w-36 items-center justify-center rounded-full border border-cyan-300/25 bg-slate-950/45 text-5xl font-extrabold text-[var(--color-primary)] shadow-[0_0_40px_rgba(0,18,51,0.12)]">
-											{reason.label}
-										</div>
-									</div>
+									<img
+										src={reason.image}
+										alt={reason.imageAlt}
+										class="relative h-full w-full rounded-[1.15rem] object-cover"
+										loading="lazy"
+									/>
 								</div>
 							</div>
 
