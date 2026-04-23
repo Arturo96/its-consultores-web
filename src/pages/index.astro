@@ -9,18 +9,24 @@ const services = [
 		description:
 			"Brindamos asesoría experta para construir estrategias de ciberseguridad alineadas con el contexto operativo de su empresa.",
 		icon: "01",
+		image: "/images/consultoria.jpg",
+		imageAlt: "Equipo de consultoria en ciberseguridad analizando estrategias empresariales",
 	},
 	{
 		title: "Auditorías",
 		description:
 			"Realizamos evaluaciones técnicas para identificar vulnerabilidades, reducir riesgos y mejorar la resiliencia de su infraestructura.",
 		icon: "02",
+		image: "/images/auditoria.png",
+		imageAlt: "Proceso de auditoria de seguridad sobre infraestructura tecnologica",
 	},
 	{
 		title: "Capacitación",
 		description:
 			"Fortalecemos la cultura de seguridad de su equipo con formación práctica para prevenir incidentes y elevar la madurez operativa.",
 		icon: "03",
+		image: "/images/capacitacion.png",
+		imageAlt: "Sesion de capacitacion en seguridad informatica para equipos corporativos",
 	},
 ];
 
@@ -143,6 +149,14 @@ const reasons = [
 						<article class="glass-card group rounded-[1.4rem] p-7">
 							<div class="flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(0,18,51,0.48)] text-sm font-extrabold text-[var(--color-primary)] ring-1 ring-white/10">
 								{service.icon}
+							</div>
+							<div class="mt-6 overflow-hidden rounded-[1.2rem] border border-white/10">
+								<img
+									src={service.image}
+									alt={service.imageAlt}
+									class="h-52 w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+									loading="lazy"
+								/>
 							</div>
 							<h3 class="mt-7 text-2xl font-bold text-[var(--color-primary)]">{service.title}</h3>
 							<p class="mt-4 text-sm leading-7 text-white/68">{service.description}</p>
