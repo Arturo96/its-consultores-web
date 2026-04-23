@@ -1,0 +1,60 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SolutionHero from "../components/SolutionHero.astro";
+import { solutionCategories } from "../data/solutions";
+---
+
+<MainLayout
+	title="Soluciones | IT & Security Consultores"
+	description="Portafolio de soluciones de ciberseguridad para empresas: endpoint, correo, seguridad perimetral, patch management y continuidad del negocio."
+>
+	<SolutionHero
+		eyebrow="Portafolio de soluciones"
+		title="Tecnologia de ciberseguridad alineada con su operacion."
+		description="Explore las categorias de soluciones que implementamos para ayudar a empresas en Colombia a reducir riesgo, proteger activos criticos y fortalecer su continuidad operativa."
+		highlights={[
+			"Portafolio B2B enfocado en proteccion, control y continuidad",
+			"Acompanamiento consultivo para seleccion, implementacion y adopcion",
+			"CTA directo a WhatsApp para avanzar conversaciones comerciales",
+		]}
+		secondaryHref="/servicios"
+		secondaryLabel="Ver servicios"
+	/>
+
+	<section class="px-5 pb-20 md:px-8 lg:px-10">
+		<div class="mx-auto max-w-7xl">
+			<div class="grid gap-6 lg:grid-cols-2">
+				{
+					solutionCategories.map((category) => (
+						<article class="glass-card rounded-[1.7rem] p-7 md:p-8">
+							<div class="flex items-center justify-between gap-4">
+								<p class="text-sm font-extrabold uppercase tracking-[0.24em] text-[var(--color-primary)]">
+									Categoria
+								</p>
+								<a href={category.path} class="text-sm font-semibold text-white/70 hover:text-[var(--color-primary)]">
+									Ver detalle
+								</a>
+							</div>
+
+							<h2 class="mt-4 text-2xl font-extrabold text-white">{category.name}</h2>
+							<p class="mt-4 text-sm leading-7 text-[var(--color-muted)]">{category.description}</p>
+
+							<ul class="mt-6 space-y-3 text-sm text-white/72">
+								{
+									category.items.map((item) => (
+										<li class="flex items-center justify-between gap-3 rounded-2xl border border-white/8 bg-white/4 px-4 py-3">
+											<span>{item.name}</span>
+											<a href={item.path} class="font-semibold text-[var(--color-primary)]">
+												Ir a pagina
+											</a>
+										</li>
+									))
+								}
+							</ul>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</MainLayout>
