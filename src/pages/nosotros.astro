@@ -1,7 +1,191 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
+const highlights = [
+	"Empresa colombiana constituida legalmente en 2002.",
+	"Más de 20 años acompañando organizaciones de distintos sectores.",
+	"Enfoque consultivo, cercano y alineado al negocio.",
+];
+
+const sections = [
+	{
+		eyebrow: "Experiencia y trayectoria",
+		title: "Más de dos décadas fortaleciendo la seguridad de empresas en Colombia.",
+		description:
+			"Desde nuestros primeros años participamos en proyectos estratégicos con clientes de alto impacto, consolidando una reputación basada en resultados, seriedad y confianza. A lo largo de nuestra trayectoria hemos ejecutado proyectos de instalación, configuración y soporte de soluciones de seguridad informática en todo el territorio colombiano.",
+		detail:
+			"La evolución del mercado y la aparición de nuevas tecnologías nos han llevado a mantener un enfoque diferencial, proactivo e innovador, priorizando siempre la calidad técnica, la especialización y la mejora continua de nuestros servicios.",
+	},
+	{
+		eyebrow: "Enfoque y valores",
+		title: "La seguridad informática va más allá de la tecnología.",
+		description:
+			"Creemos en un acompañamiento cercano y continuo, apoyado en un equipo humano altamente capacitado y comprometido, capaz de entender las necesidades reales del negocio y ofrecer soluciones alineadas con los objetivos de cada organización.",
+		detail:
+			"También promovemos el desarrollo del talento local mediante la formación y capacitación constante de nuestros profesionales, fortaleciendo así nuestra capacidad de respuesta y el valor que entregamos a nuestros clientes.",
+	},
+];
 ---
 
-<MainLayout title="Nosotros | IT & Security Consultores">
-	<h1>Nosotros</h1>
+<MainLayout
+	title="Nosotros | IT & Security Consultores"
+	description="Conozca a IT & Security Consultores: empresa colombiana con más de 20 años de experiencia en consultoría y soluciones de seguridad informática para empresas."
+>
+	<section class="section-shell overflow-hidden px-5 py-16 md:px-8 md:py-20 lg:px-10">
+		<div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+			<div>
+				<h1 class="mt-6 max-w-3xl text-4xl font-extrabold leading-tight text-white md:text-5xl lg:text-6xl">
+					Nuestra empresa
+				</h1>
+
+				<p class="mt-6 max-w-2xl text-base leading-8 text-[var(--color-muted)] md:text-lg">
+					IT & Security Consultores S.A.S. es una empresa colombiana especializada en
+					consultoría y soluciones de seguridad informática, constituida legalmente en el año
+					2002. Desde entonces ayudamos a empresas a proteger su activo más valioso: la
+					información.
+				</p>
+
+				<p class="mt-5 max-w-2xl text-base leading-8 text-[var(--color-muted)]">
+					Nuestro enfoque parte del análisis del entorno tecnológico de cada cliente para
+					recomendar soluciones integrales, efectivas y alineadas con su realidad operativa.
+				</p>
+
+				<div class="mt-10 flex flex-col gap-4 sm:flex-row">
+					<a href="#contacto" class="btn-primary px-7 py-4 text-base">Contáctanos</a>
+				</div>
+			</div>
+
+			<div class="glass-card rounded-[1.8rem] p-7 md:p-8">
+				<p class="text-sm font-extrabold uppercase tracking-[0.24em] text-[var(--color-primary)]">
+					Nuestra base
+				</p>
+				<ul class="mt-6 space-y-4">
+					{
+						highlights.map((highlight, index) => (
+							<li class="flex gap-4 rounded-2xl border border-white/8 bg-white/4 px-4 py-4">
+								<div class="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-400/10 text-xs font-extrabold text-[var(--color-primary)]">
+									0{index + 1}
+								</div>
+								<p class="text-sm leading-7 text-white/76">{highlight}</p>
+							</li>
+						))
+					}
+				</ul>
+
+				<div class="mt-8 grid gap-4 sm:grid-cols-2">
+					<div class="rounded-2xl border border-white/8 bg-white/4 px-5 py-5">
+						<p class="text-3xl font-extrabold text-[var(--color-primary)]">+20</p>
+						<p class="mt-2 text-sm text-white/68">Años de experiencia en ciberseguridad B2B.</p>
+					</div>
+					<div class="rounded-2xl border border-white/8 bg-white/4 px-5 py-5">
+						<p class="text-3xl font-extrabold text-[var(--color-primary)]">2002</p>
+						<p class="mt-2 text-sm text-white/68">Constitución legal y trayectoria sostenida.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="px-5 pb-20 md:px-8 lg:px-10">
+		<div class="mx-auto max-w-7xl">
+			<div class="glass-card rounded-[2rem] p-7 md:p-10">
+				<div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+					<div>
+						<p class="text-sm font-extrabold uppercase tracking-[0.24em] text-[var(--color-primary)]">
+							Trayectoria corporativa
+						</p>
+						<h2 class="mt-4 text-3xl font-extrabold text-white md:text-4xl">
+							Construimos relaciones basadas en confianza, seriedad y transparencia.
+						</h2>
+					</div>
+
+					<div class="space-y-5 text-base leading-8 text-[var(--color-muted)]">
+						<p>
+							Con más de 20 años de experiencia, hemos acompañado a organizaciones de
+							distintos sectores económicos en la protección de su infraestructura
+							tecnológica, respondiendo a necesidades reales de operación, continuidad y
+							reducción del riesgo.
+						</p>
+						<p>
+							Nuestra capacidad operativa se ha fortalecido con proyectos de instalación,
+							configuración y soporte ejecutados tanto de forma presencial como remota en todo
+							el territorio colombiano.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="px-5 pb-20 md:px-8 lg:px-10">
+		<div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
+			<article class="glass-card rounded-[1.8rem] p-7 md:p-9">
+				<h2 class="text-2xl font-extrabold text-white md:text-3xl">Misión</h2>
+				<p class="mt-5 text-sm leading-8 text-[var(--color-muted)] md:text-base">
+					IT & Security Consultores S.A.S. es una empresa especializada en la consultoría de
+					seguridad informática, con un equipo humano altamente comprometido y capacitado para
+					brindar a nuestros clientes soluciones integrales de tecnología de la información
+					(TI), asesoría experta y acompañamiento continuo, que permitan implementar esquemas
+					de seguridad multinivel, proactivos y efectivos, minimizando costos y pérdidas
+					innecesarias que mejoren la competitividad de nuestros clientes, cumpliendo así con
+					los más altos estándares de prevención y calidad de sus sistemas de información.
+				</p>
+			</article>
+
+			<article class="glass-card rounded-[1.8rem] p-7 md:p-9">
+				<h2 class="text-2xl font-extrabold text-white md:text-3xl">Visión</h2>
+				<p class="mt-5 text-sm leading-8 text-[var(--color-muted)] md:text-base">
+					IT & Security Consultores S.A.S. en un futuro cercano, será reconocida a nivel
+					nacional como una de las empresas más competitivas en el campo de la consultoría y
+					seguridad informática, por su enfoque proactivo en la mitigación de riesgos, por su
+					excelencia en el servicio, su know-how y su infraestructura física y tecnológica,
+					permitiendo la integración de nuestros procesos con nuestros clientes, proveedores y
+					empleados, logrando así un óptimo desarrollo como empresa generadora de valor.
+				</p>
+			</article>
+		</div>
+	</section>
+
+	<section class="px-5 pb-20 md:px-8 lg:px-10">
+		<div class="mx-auto max-w-7xl space-y-6">
+			{
+				sections.map((section) => (
+					<article class="glass-card rounded-[1.8rem] p-7 md:p-9">
+						<p class="text-sm font-extrabold uppercase tracking-[0.24em] text-[var(--color-primary)]">
+							{section.eyebrow}
+						</p>
+						<div class="mt-4 grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
+							<h2 class="text-2xl font-extrabold text-white md:text-3xl">{section.title}</h2>
+							<div class="space-y-5 text-sm leading-8 text-[var(--color-muted)] md:text-base">
+								<p>{section.description}</p>
+								<p>{section.detail}</p>
+							</div>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="px-5 pb-20 md:px-8 lg:px-10">
+		<div class="glass-card mx-auto max-w-6xl rounded-[2rem] px-7 py-10 md:px-12 md:py-12">
+			<div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+				<div>
+					<p class="text-sm font-extrabold uppercase tracking-[0.28em] text-[var(--color-primary)]">
+						Nuestro compromiso
+					</p>
+					<h2 class="mt-3 text-3xl font-extrabold text-white md:text-4xl">
+						Seguimos evolucionando para acompañar a las empresas frente a los retos actuales y futuros.
+					</h2>
+					<p class="mt-4 max-w-3xl text-base leading-7 text-[var(--color-muted)]">
+						Nos mantenemos como una empresa reconocida por su honestidad, legalidad y
+						generación de valor agregado, respaldados por fabricantes, aliados estratégicos y
+						el profesionalismo de nuestro equipo.
+					</p>
+				</div>
+
+				<a href="#contacto" class="btn-primary px-7 py-4 text-base">Contáctanos</a>
+			</div>
+		</div>
+	</section>
 </MainLayout>
