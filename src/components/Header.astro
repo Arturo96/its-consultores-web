@@ -4,7 +4,7 @@ import { solutionCategories } from "../data/solutions";
 const links = [
 	{ href: "/nosotros", label: "Quienes Somos" },
 	{ href: "/servicios", label: "Servicios" },
-	{ href: "/contacto", label: "Contacto" },
+	{ href: "#contacto", label: "Contacto" },
 ];
 
 const { currentPath = "/" } = Astro.props;
@@ -95,7 +95,7 @@ const isSolutionsActive = currentPath.startsWith("/soluciones");
 
 			{
 				links.slice(1).map(({ href, label }) => {
-					const isActive = currentPath === href;
+					const isActive = href.startsWith("/") && currentPath === href;
 
 					return (
 						<a
@@ -195,7 +195,7 @@ const isSolutionsActive = currentPath.startsWith("/soluciones");
 
 					{
 						links.slice(1).map(({ href, label }) => {
-							const isActive = currentPath === href;
+							const isActive = href.startsWith("/") && currentPath === href;
 
 							return (
 								<a
